@@ -1,0 +1,8 @@
+=== Présentation du plugin
+
+Ce plugin sert à créer et afficher une horloge de type Flip.
+
+On peut choisir parmis une liste de type visualisable dans la galerie ci-dessous.
+
+Une animation est visualisable au changement de minutes ou d'heure.
+

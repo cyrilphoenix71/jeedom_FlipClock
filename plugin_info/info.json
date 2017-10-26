@@ -1,0 +1,9 @@
+{
+	"id" : "FlipClock",
+	"name" : "FlipClock",
+	"description" : "Plugin pour créer une horloge de type Flip",
+	"licence" : "AGPL",
+	"author" : "cyrilphoenix",
+	"require" : "3.0",
+	"category" : "organization"
+}

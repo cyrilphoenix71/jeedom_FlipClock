@@ -1,0 +1,7 @@
+=== F.A.Q. du plugin
+
+Comment choisir le type d'horloge ?
+Il suffit de saisir le numéro du type sachant qu'un contrôle de la valeur sest automatique.
+
+Comment avoir le fond transparent sur mon horloge ?
+Via la configuration avancé de l'horloge.

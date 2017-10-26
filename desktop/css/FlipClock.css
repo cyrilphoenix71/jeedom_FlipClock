@@ -1,0 +1,14 @@
+/*popover*/
+i[data-toggle="popover"] {
+	cursor:help;
+}
+
+.popover-title {
+	background-color: #4B7731; 
+	color: #FFFFFF; 
+}
+ 
+.popover-content {
+	background-color: #343637;
+	color: #FFFFFF;
+}
