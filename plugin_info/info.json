@@ -1,11 +1,14 @@
 {
 	"id" : "FlipClock",
 	"name" : "FlipClock",
+	"version": "2.0.0",
 	"description" : "Plugin pour créer une horloge de type Flip",
 	"licence" : "AGPL",
 	"author" : "cyrilphoenix",
 	"require" : "3.0",
 	"category" : "organization",
+	"hasDependency" : 0,
+	"hasOwnDeamon" : 0,
 	"changelog" : "https://github.com/cyrilphoenix71/jeedom_FlipClock/blob/master/doc/fr_FR/index.asciidoc",
 	"documentation" : "https://github.com/cyrilphoenix71/jeedom_FlipClock/blob/master/doc/fr_FR/changelog.asciidoc"
 }

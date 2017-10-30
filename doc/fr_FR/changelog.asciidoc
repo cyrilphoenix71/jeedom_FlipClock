@@ -1,8 +1,3 @@
-Version 1.0
-- Création du plugin
-- Ajout horloge Type 1 HTC Blanche
-- Ajout horloge Type 2 HTC Noire
-
 Version 2.0
 - Ajout horloge Type 3 HTC Rouge
 - Ajout horloge Type 4 HTC Blanche bleutée
@@ -17,3 +12,7 @@ Version 2.0
 - fr_FR
 - Nouvelle galerie
 
+Version 1.0
+- Création du plugin
+- Ajout horloge Type 1 HTC Blanche
+- Ajout horloge Type 2 HTC Noire
