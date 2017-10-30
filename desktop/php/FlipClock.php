@@ -42,8 +42,8 @@ $eqLogics = eqLogic::byType('FlipClock');
 			<?php
 			foreach ($eqLogics as $eqLogic) {
 				$opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
-				$typeClock = $eqLogic->getConfiguration('clocknum','1');
-				if ($typeClock<1 || $typeClock>2) {
+				$typeClock = $eqLogic->getConfiguration('clocktype','1')+1;
+				if ($typeClock<1 || $typeClock>4) {
 					$typeClock = '1';
 				}
 				echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
@@ -70,68 +70,184 @@ $eqLogics = eqLogic::byType('FlipClock');
 				<br/>
 				<form class="form-horizontal">
 					<fieldset>
-					<div class="form-group">
-						<label class="col-md-3 control-label">{{Nom de l'horloge}}</label>
-						<div class="col-md-4">
-							<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-							<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'horloge}}"/>
+						<div class="form-group">
+							<label class="col-md-3 control-label">{{Nom de l'horloge}}</label>
+							<div class="col-md-4">
+								<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
+								<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'horloge}}"/>
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-3 control-label" >{{Objet parent}}</label>
-						<div class="col-md-4">
-							<select class="form-control eqLogicAttr" data-l1key="object_id">
-								<option value="">{{Aucun}}</option>
+						<div class="form-group">
+							<label class="col-md-3 control-label" >{{Objet parent}}</label>
+							<div class="col-md-4">
+								<select class="form-control eqLogicAttr" data-l1key="object_id">
+									<option value="">{{Aucun}}</option>
+									<?php
+										foreach (object::all() as $object) {
+											echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
+										}
+									?>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label"></label>
+							<div class="col-sm-8">
+								<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
+								<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Catégorie}}</label>
+							<div class="col-sm-8" style="margin-top:10px;">
 								<?php
-									foreach (object::all() as $object) {
-										echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
-									}
+								foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
+									echo '<label class="checkbox-inline">';
+									echo '<input type="checkbox" class="eqLogicAttr" data-l1key="category" data-l2key="' . $key . '" />' . $value['name'];
+									echo '</label>';
+								}
 								?>
-							</select>
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label"></label>
-						<div class="col-sm-8">
-							<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
-							<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-3 control-label">{{Catégorie}}</label>
-						<div class="col-sm-8" style="margin-top:10px;">
-							<?php
-							foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
-								echo '<label class="checkbox-inline">';
-								echo '<input type="checkbox" class="eqLogicAttr" data-l1key="category" data-l2key="' . $key . '" />' . $value['name'];
-								echo '</label>';
-							}
-							?>
-						</div>
-					</div>
-					<br>
-					<br>
+						<br>
+						<br>
+					</fieldset>
 					<fieldset>
 						<legend><i class="icon fa fa-cog"></i>   {{Paramètres Généraux}}
 						<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
 							title="{{Paramètres Généraux}}" 
-							data-content="{{Cette section sert à selectionner la famille de l'ouvrant afin de filtrer les modèles et options qui suivent}}.<br>
-							{{On vient aussi définir les options de géometrie de l'ouvrant}}."></i>
+							data-content="{{Cette section sert à choisir les options graphique de l'horloge}}."></i>
 						</legend>
 						<div class="form-group">
-							<label class="col-sm-3 control-label">{{Type horloge}}</label>
-							<div class="col-sm-1">
-								<div class="input-group">
-									<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="clocknum" placeholder="1" value="1"/>
-								</div>
+							<label class="col-sm-3 control-label">{{Type d'horloge}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clocktype">
+									<?php
+										$typearray = array(
+											'{{HTC Blanche}}',
+											'{{HTC Noire}}',
+											'{{HTC Rouge}}',
+											'{{HTC Bleutée}}'
+										);
+										foreach($typearray as $typeidx=>$typename) {
+											echo '<option value="'.$typeidx.'">'.$typeidx.' - '.$typename.'</option>';
+										}
+									?>
+								</select>
 							</div>
 							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
-							title="{{Taille}}" 
-							data-content="{{Saisissez ici le type de l'horloge}}.<br>
-							{{La valeur par défaut (ou si omise) est à}} 1.<br>
-							{{Attention saisissez une valeur numérique}}."></i>
+							title="{{Type}}" 
+							data-content="{{Choisissez ici le type de l'horloge}}.<br>
+							{{La valeur par défaut est HTC Blanche}}."></i>
 						</div>
-					</fieldset>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Type d'ombre de l'heure}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clockglow">
+									<?php
+										$glowarray = array(
+											'{{Noire}}',
+											'{{Blanche}}',
+											'{{Sans ombre}}'
+										);
+										foreach($glowarray as $glowidx=>$glowname) {
+											echo '<option value="'.$glowidx.'">'.$glowidx.' - '.$glowname.'</option>';
+										}
+									?>
+								</select>
+							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Ombre d'heure}}" 
+							data-content="{{Choisissez ici le type d'ombre de l'heure}}.<br>
+							{{La valeur par défaut est avec ombre noire}}."></i>
+						</div>	
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Type de digits}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clocknum">
+									<?php
+										$numarray = array(
+											'{{Noirs}}',
+											'{{Blancs}}',
+											'{{Rouges}}'
+										);
+										foreach($numarray as $numidx=>$numname) {
+											echo '<option value="'.$numidx.'">'.$numidx.' - '.$numname.'</option>';
+										}
+									?>
+								</select>
+							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Digits}}" 
+							data-content="{{Choisissez ici le type de digits}}.<br>
+							{{La valeur par défaut est Noirs}}."></i>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Type de dots}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clockdots">
+									<?php
+										$dotsarray = array(
+											'{{Sans}}',
+											'{{Blancs}}',
+											'{{Noirs}}',
+											'{{Rouges}}',
+											'{{Bleutés}}'
+										);
+										foreach($dotsarray as $dotsidx=>$dotsname) {
+											echo '<option value="'.$dotsidx.'">'.$dotsidx.' - '.$dotsname.'</option>';
+										}
+									?>
+								</select>
+							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Dots}}" 
+							data-content="{{Choisissez ici le type de dots (séparateur heures/minutes)}}.<br>
+							{{La valeur par défaut est blancs}}."></i>
+						</div>						
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Type de fond}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clockback">
+									<?php
+										$backarray = array(
+											'{{Aucun}}',
+											'{{HTC Original}}',
+											'{{HTC Black}}',
+											'{{HTC White}}'
+										);
+										foreach($backarray as $backidx=>$backname) {
+											echo '<option value="'.$backidx.'">'.$backidx.' - '.$backname.'</option>';
+										}
+									?>
+								</select>
+							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Fond}}" 
+							data-content="{{Choisissez ici le type de fond}}.<br>
+							{{La valeur par défaut est aucun}}."></i>
+						</div>	
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Type d'ombre de fond}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clockbackglow">
+									<?php
+										$backglowarray = array(
+											'{{Noire}}',
+											'{{Blanche}}',
+											'{{Sans ombre}}'
+										);
+										foreach($backglowarray as $backglowidx=>$backglowname) {
+											echo '<option value="'.$backglowidx.'">'.$backglowidx.' - '.$backglowname.'</option>';
+										}
+									?>
+								</select>
+							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Ombre de fond}}" 
+							data-content="{{Choisissez ici le type d'ombre du fond}}.<br>
+							{{La valeur par défaut est sans ombre}}."></i>
+						</div>						
 					</fieldset>
 				</form>
 			</div>

@@ -5,5 +5,7 @@
 	"licence" : "AGPL",
 	"author" : "cyrilphoenix",
 	"require" : "3.0",
-	"category" : "organization"
+	"category" : "organization",
+	"changelog" : "https://github.com/cyrilphoenix71/jeedom_FlipClock/blob/master/doc/fr_FR/index.asciidoc",
+	"documentation" : "https://github.com/cyrilphoenix71/jeedom_FlipClock/blob/master/doc/fr_FR/changelog.asciidoc"
 }

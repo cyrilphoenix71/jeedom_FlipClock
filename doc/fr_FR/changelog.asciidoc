@@ -1,4 +1,19 @@
 Version 1.0
 - Création du plugin
-- Ajout horloge Type 1 HTC White
-- Ajout horloge Type 2 HTC Black
+- Ajout horloge Type 1 HTC Blanche
+- Ajout horloge Type 2 HTC Noire
+
+Version 2.0
+- Ajout horloge Type 3 HTC Rouge
+- Ajout horloge Type 4 HTC Blanche bleutée
+- Ajout option choix de l'ombre (Noire, Blanche ou Sans)
+- Ajout option choix du type de digits (Noirs, Blancs ou Rouge)
+- Ajout option choix du type de dots (Sans, Blancs, Noirs, Rouges ou Bleutés)
+- Ajout option choix du type de fond (Aucun, HTC Original, HTC Black, HTC White)
+- Ajout option choix de l'ombre de fond (Noire, Blanche ou Sans)
+- Optimisation page configuration avec liste de choix
+- Centralisation des scripts
+- Nettoyage
+- fr_FR
+- Nouvelle galerie
+

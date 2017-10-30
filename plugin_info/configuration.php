@@ -48,6 +48,24 @@ if (!isConnect()) {
 	margin: 0 20px 0 0;
 }
 
+.holderback {
+	/* Dimension des images, vous pouvez les modifier */
+	width: 258px;
+	height: 128px;
+	/* Flottement à gauche, donc l'ensemble est aligné à droite */
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.holderdigits {
+	/* Dimension des images, vous pouvez les modifier */
+	width: 51px;
+	height: 128px;
+	/* Flottement à gauche, donc l'ensemble est aligné à droite */
+	float: left;
+	margin: 0 20px 0 0;
+}
+
 .holder.little {
 	width: 42px;
 	height: 42px;
@@ -127,32 +145,6 @@ div[id^=image]:target .close {
 div[id^=image]:target .expand {
 	display: none;
 }*/
-<?php
-	$dir = 'plugins/opening/core/template/dashboard/images/';
-	$file_display = array('jpg', 'jpeg', 'png', 'gif');
-
-	if (file_exists($dir) == false)
-	{
-		echo 'Directory "', $dir, '" not found!';
-	}
-	else
-	{
-		$dir_contents = scandir($dir);
-		$i = 0;
-		foreach ($dir_contents as $file)
-		{
-			$file_type = strtolower(end(explode('.', $file)));
-			if(in_array($file_type,$file_display))
-			{
-				$name = basename($file);
-				$width=$i%3*290;
-				$i++;
-				echo "div#image-$name { left: $width px; }";
-			}
-		}
-	}
-?>
-
 </style>
 </head>
 <form class="form-horizontal">
@@ -173,7 +165,7 @@ div[id^=image]:target .expand {
 	<div class="form-group">
 		<label class="col-sm-2 control-label">{{Présentation}} :</label>
 		<div class="col-lg-8" style="margin-top:9px">
-			{{Plugin pour créer une horloge de type Flip (HTC like)}}.<br><br>
+			{{Plugin pour créer une horloge de type Flip}}.<br><br>
 			{{On peut choisir parmis une liste de type visualisable dans la galerie ci-dessous}}.<br><br>
 			{{Une animation est visualisable au changement de minutes ou d'heure.}}<br><br>
 		</div>
@@ -193,7 +185,6 @@ div[id^=image]:target .expand {
 			<?php
 				$dir = 'plugins/FlipClock/core/template/dashboard/images/';
 				$file_display = array('jpg', 'jpeg', 'png', 'gif');
-
 				if (file_exists($dir) == false)
 				{
 					echo 'Directory "', $dir, '" not found!';
@@ -201,7 +192,6 @@ div[id^=image]:target .expand {
 				else
 				{
 					$dir_contents = scandir($dir);
-
 					foreach ($dir_contents as $file)
 					{
 						$file_type = strtolower(end(explode('.', $file)));
@@ -211,11 +201,133 @@ div[id^=image]:target .expand {
 							if (strpos($name, 'Type') !== false){
 								echo "<div class='holder'>";
 								echo "    <div id='image-$name' class='image-lightbox'>";
-								//echo "        <span class='close'><a href='#'>X</a></span>";
 								echo "        <img src='$dir$file' alt='$name' title='$name'>";
-								//echo "        <a class='expand' href='#image-$name'></a>";
 								echo "    </div>";
 								echo "</div>";
+							}
+						}
+					}
+				}
+			?>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-info" style="height: 100%;">
+	<div class="panel-heading" role="tab">
+		<h4 class="panel-title">
+			{{Galerie des types de fond}}
+		</h4>
+	</div>
+	<div class="form-group">
+		<br>
+		<label class="col-sm-1 control-label"></label>
+		<div class="col-lg-10">
+		<div id="images-box">
+			<?php
+				$dir = 'plugins/FlipClock/core/template/dashboard/images/back/';
+				$file_display = array('jpg', 'jpeg', 'png', 'gif');
+				if (file_exists($dir) == false)
+				{
+					echo 'Directory "', $dir, '" not found!';
+				}
+				else
+				{
+					$dir_contents = scandir($dir);
+					foreach ($dir_contents as $file)
+					{
+						$file_type = strtolower(end(explode('.', $file)));
+						if(in_array($file_type,$file_display))
+						{
+							$name = basename($file);
+							if (strpos($name, '1back') !== false){
+								echo "<div class='holderback'>";
+								echo "    <div id='image-$name' class='image-lightbox'>";
+								echo "        <img src='$dir$file' alt='$name' title='$name'>";
+								echo "    </div>";
+								echo "</div>";
+							}
+						}
+					}
+				}
+			?>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-info" style="height: 100%;">
+	<div class="panel-heading" role="tab">
+		<h4 class="panel-title">
+			{{Galerie des types de dots}}
+		</h4>
+	</div>
+	<div class="form-group">
+		<br>
+		<label class="col-sm-1 control-label"></label>
+		<div class="col-lg-10">
+		<div id="images-box">
+			<?php
+				$dir = 'plugins/FlipClock/core/template/dashboard/images/dots/';
+				$file_display = array('jpg', 'jpeg', 'png', 'gif');
+				if (file_exists($dir) == false)
+				{
+					echo 'Directory "', $dir, '" not found!';
+				}
+				else
+				{
+					$dir_contents = scandir($dir);
+					foreach ($dir_contents as $file)
+					{
+						$file_type = strtolower(end(explode('.', $file)));
+						if(in_array($file_type,$file_display))
+						{
+							$name = basename($file);
+							if (strpos($name, 'dots') !== false){
+								echo "<div class='holderback'>";
+								echo "    <div id='image-$name' class='image-lightbox'>";
+								echo "        <img src='$dir$file' alt='$name' title='$name'>";
+								echo "    </div>";
+								echo "</div>";
+							}
+						}
+					}
+				}
+			?>
+		</div>
+		</div>
+	</div>
+</div>
+<div class="panel panel-info" style="height: 100%;">
+	<div class="panel-heading" role="tab">
+		<h4 class="panel-title">
+			{{Galerie des types de digits}}
+		</h4>
+	</div>
+	<div class="form-group">
+		<br>
+		<label class="col-sm-1 control-label"></label>
+		<div class="col-lg-10">
+		<div id="images-box">
+			<?php
+				for ($i = 1; $i <= 10; $i++) { 
+					$dir = 'plugins/FlipClock/core/template/dashboard/images/num'.$i.'/';
+					$file_display = array('jpg', 'jpeg', 'png', 'gif');
+					if (file_exists($dir) == true)
+					{
+						$dir_contents = scandir($dir);
+						foreach ($dir_contents as $file)
+						{
+							$file_type = strtolower(end(explode('.', $file)));
+							if(in_array($file_type,$file_display))
+							{
+								$name = basename($file);
+								if (strpos($name, '8') !== false){
+									echo "<div class='holderdigits'>";
+									echo "    <div id='image-$name' class='image-lightbox'>";
+									echo "        <img src='$dir$file' alt='$name' title='$name'>";
+									echo "    </div>";
+									echo "</div>";
+								}
 							}
 						}
 					}

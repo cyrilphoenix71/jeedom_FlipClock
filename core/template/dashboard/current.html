@@ -1,16 +1,16 @@
 <div id="plugin_container" style="min-width:414px;min-height:210px;border:#border#;border-radius:#border-radius#;background-color: #background-color#;color: #color#;#style#"  class="eqLogic-widget eqLogic allowResize" data-eqLogic_id="#id#" data-eqLogic_uid="#uid#" data-version="dashboard" >
 
-	<link rel="stylesheet" type="text/css" href="plugins/FlipClock/core/template/dashboard/css/digiFlipClock#ClockNum#.css" />
-	<script type="text/javascript" src="plugins/FlipClock/core/template/dashboard/scripts/jquery.jdigiFlipClock#ClockNum#.js"></script>
+	<link rel="stylesheet" type="text/css" href="plugins/FlipClock/core/template/dashboard/css/digiFlipClock.css" />
+	<script type="text/javascript" src="plugins/FlipClock/core/template/dashboard/scripts/jquery.jdigiFlipClock.js"></script>
 	<div id="digiFlipClock#id#">
 		<div id="digital_container">
 			<div id="clock">
-				<script type="text/javascript">$('#digiFlipClock#id#').jdigiFlipClock();</script>		
+				<script type="text/javascript">$('#digiFlipClock#id#').jdigiFlipClock({clockType:#ClockType#,clockGlow:#ClockGlow#,clockNum:#ClockNum#,clockBack:#ClockBack#,clockDots:#ClockDots#,clockBackGlow:#ClockBackGlow#});</script>		
 			</div>
 		</div>
 	</div>
 </div>
 				
 <script type="text/javascript">
-	$('#digiFlipClock#id#').jdigiFlipClock();
+	$('#digiFlipClock#id#').jdigiFlipClock({clockType:#ClockType#,clockGlow:#ClockGlow#,clockNum:#ClockNum#,clockBack:#ClockBack#,clockDots:#ClockDots#,clockBackGlow:#ClockBackGlow#});
 </script>

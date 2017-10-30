@@ -5,8 +5,49 @@ Après avoir installé le plugin, il vous suffit de l'activer.
 Ce plugin n'a aucune configuration particulière.
 
 Il est possible de choisir le type d'horloge en indiquant son numero de type :
-- 1 = HTC White
-- 2 = HTC Black
+- 1 = HTC Blanche
+- 2 = HTC Noire
+- 3 = HTC Rouge
+- 4 = HTC Blanche bleutée
 
-Par defaut ou si une valeur éronée est saisie, le type 1 sera selectionné.
+Par defaut ou si une valeur éronée est saisie, le type HTC Blanche sera selectionné.
+
+Il est possible de choisir le type d'ombre apparaissant sous l'horloge :
+- 1 = Noire
+- 2 = Blanche
+- 3 = Sans ombre
+
+Par defaut ou si une valeur éronée est saisie, le type noire sera selectionné.
+
+Il est possible de choisir le type de digits :
+- 1 = Noirs
+- 2 = Blancs
+- 3 = Rouges
+
+Par defaut ou si une valeur éronée est saisie, le type noirs sera selectionné.
+
+Il est possible de choisir le type de dost (séparateur heures/minutes) :
+- 1 = Sans
+- 2 = Blancs
+- 3 = Noirs
+- 4 = Rouges
+- 5 - Bleutées
+
+Par defaut ou si une valeur éronée est saisie, le type Blancs sera selectionné.
+
+Il est possible de choisir le type de fond :
+- 1 = Aucun
+- 2 = HTC Original
+- 3 = HTC Black
+- 4 = HTC White
+
+Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
+
+Il est possible de choisir le type d'ombre apparaissant sous le fond :
+- 1 = Noire
+- 2 = Blanche
+- 3 = Sans ombre
+
+Par defaut ou si une valeur éronée est saisie, le type sans ombre sera selectionné.
+
 

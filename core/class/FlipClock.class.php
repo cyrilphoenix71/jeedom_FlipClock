@@ -71,32 +71,39 @@ class FlipClock extends eqLogic {
 		if ($this->getDisplay('hideOn' . $version) == 1) {
 			return '';
 		}
-	if ($this->getConfiguration('clocknum',1)>0 && $this->getConfiguration('clocknum',1)<=2) {
-		$replace['#ClockNum#'] = $this->getConfiguration('clocknum',1);
-	} else {
+	//Recuperation type horloge
+	$replace['#ClockType#'] = $this->getConfiguration('clocktype',1)+1;
+	if ($replace['#ClockType#']<1 || $replace['#ClockType#']>4) {
+		$replace['#ClockType#'] = '1';
+	}
+	//Recuperation type numero
+	$replace['#ClockNum#'] = $this->getConfiguration('clocknum',1)+1;
+	if ($replace['#ClockNum#']<1 || $replace['#ClockNum#']>3) {
 		$replace['#ClockNum#'] = '1';
+	}
+	//Recuperation type ombre
+	$replace['#ClockGlow#'] = $this->getConfiguration('clockglow',1)+1;
+	if ($replace['#ClockGlow#']<1 || $replace['#ClockGlow#']>3) {
+		$replace['#ClockGlow#'] = '1';
+	}
+	//Recuperation type fond
+	$replace['#ClockBack#'] = $this->getConfiguration('clockback',1)+1;
+	if ($replace['#ClockBack#']<1 || $replace['#ClockBack#']>4) {
+		$replace['#ClockBack#'] = '1';
+	}
+	//Recuperation type dots
+	$replace['#ClockDots#'] = $this->getConfiguration('clockdots',1)+1;
+	if ($replace['#ClockDots#']<1 || $replace['#ClockDots#']>5) {
+		$replace['#ClockDots#'] = '1';
+	}
+	//Recuperation type ombre pour fond
+	$replace['#ClockBackGlow#'] = $this->getConfiguration('clockbackglow',1)+1;
+	if ($replace['#ClockBackGlow#']<1 || $replace['#ClockBackGlow#']>3) {
+		$replace['#ClockBackGlow#'] = '1';
 	}
 		
     $refresh = $this->getCmd(null, 'refresh');
     $replace['#refresh_id#'] = is_object($refresh) ? $refresh->getId() : '';
-
-    $condition = $this->getCmd(null, 'summary');
-    $icone = $this->getCmd(null, 'icon');
-		if (is_object($condition)) {
-			$replace['#condition#'] = $condition->execCmd();
-				if ($this->getConfiguration('CollectDateIsVisible') != '1') {
-					$replace['#collectDate#'] = '';
-				} else {
-					$replace['#collectDate#'] = 'Actualisé le '.$condition->getCollectDate();
-				}
-		} else {
-			$replace['#icone#'] = '';
-			$replace['#condition#'] = '';
-			$replace['#collectDate#'] = '';
-		}
-
-    $icone = $this->getCmd(null, 'icon');
-    $replace['#icone#'] = is_object($icone) ? $icone->execCmd() : '';
 
     $parameters = $this->getDisplay('parameters');
 	if (is_array($parameters)) {
@@ -110,7 +117,6 @@ class FlipClock extends eqLogic {
 		return $html;
 		log::add('FlipClock', 'debug', 'Fin de la fonction toHtml()');
 	}
-
 }
 
 class FlipClockCmd extends cmd {
@@ -123,7 +129,6 @@ class FlipClockCmd extends cmd {
       return $this->getConfiguration('value');
     }
   }
-
 }
 
 ?>
