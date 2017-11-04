@@ -163,11 +163,18 @@ div[id^=image]:target .expand {
 		<br>
 	</div>
 	<div class="form-group">
+		<br>
+		<label class="col-sm-2 control-label">{{Version}} :</label>
+		<div class="col-lg-8" style="margin-top:9px">2.1<br><br>
+		</div>
+		<br>
+	</div>
+	<div class="form-group">
 		<label class="col-sm-2 control-label">{{Présentation}} :</label>
 		<div class="col-lg-8" style="margin-top:9px">
 			{{Plugin pour créer une horloge de type Flip}}.<br><br>
 			{{On peut choisir parmis une liste de type visualisable dans la galerie ci-dessous}}.<br><br>
-			{{Une animation est visualisable au changement de minutes ou d'heure.}}<br><br>
+			{{Une animation est visualisable au changement de minutes ou d'heure}}.<br><br>
 		</div>
 	</div>
 </div>

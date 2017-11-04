@@ -19,6 +19,20 @@
         "Visible": "Visible",
 		"Catégorie": "Catégorie",
         "Paramètres Généraux": "Paramètres Généraux",
+		"Cette section sert à choisir les paramètres de l'horloge": "Cette section sert à choisir les paramètres de l'horloge",
+		"Largeur de l'horloge": "Largeur de l'horloge",
+		"pixels": "pixels",
+		"Saisissez ici la largeur en pixel de l'horloge": "Saisissez ici la largeur en pixel de l'horloge",
+		"La valeur par défaut (ou si omise) est à": "La valeur par défaut (ou si omise) est à",
+		"pixels si affichage sans les secondes et": "pixels si affichage sans les secondes et",
+		"si avec les secondes": "si avec les secondes",
+		"Affichage des secondes": "Affichage des secondes",
+		"En cochant cette case, vous activé l'affichage des secondes. La taille de l'horloge sera adaptée": "En cochant cette case, vous activé l'affichage des secondes. La taille de l'horloge sera adaptée",
+		"Animation des secondes": "Animation des secondes",
+		"En cochant cette case, vous activé l'animation des secondes": "En cochant cette case, vous activé l'animation des secondes",
+		"La valeur par défaut est 1s": "La valeur par défaut est 1s",
+		"Toutes les": "Toutes les",
+		"Options Graphiques": "Options Graphiques",
         "Configuration": "Configuration",
         "Cette section sert à choisir les options graphique de l'horloge": "Cette section sert à choisir les options graphique de l'horloge",
 		"Type d'horloge": "Type d'horloge",
@@ -65,6 +79,18 @@
 		"Sans ombre": "Sans ombre",
 		"Ombre de fond": "Ombre de fond",
 		"Choisissez ici le type d'ombre du fond": "Choisissez ici le type d'ombre du fond",
-		"La valeur par défaut est sans ombre": "La valeur par défaut est sans ombre",
+		"La valeur par défaut est sans ombre": "La valeur par défaut est sans ombre"
     }
+	"plugins/FlipClock/plugin_info/configuration.php": {
+		"Configuration": "Configuration",
+		"Accès à la configuration": "Accès à la configuration",
+		"Présentation": "Présentation",
+		"Plugin pour créer une horloge de type Flip": "Plugin pour créer une horloge de type Flip",
+		"On peut choisir parmis une liste de type visualisable dans la galerie ci-dessous": "On peut choisir parmis une liste de type visualisable dans la galerie ci-dessous",
+		"Une animation est visualisable au changement de minutes ou d'heure": "Une animation est visualisable au changement de minutes ou d'heure",
+		"Galerie des types d'horloges": "Galerie des types d'horloges",
+		"Galerie des types de fond": "Galerie des types de fond",
+		"Galerie des types de dots": "Galerie des types de dots",
+		"Galerie des types de digits": "Galerie des types de digits"
+	}
 }

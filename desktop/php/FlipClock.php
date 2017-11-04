@@ -116,6 +116,46 @@ $eqLogics = eqLogic::byType('FlipClock');
 						<legend><i class="icon fa fa-cog"></i>   {{Paramètres Généraux}}
 						<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
 							title="{{Paramètres Généraux}}" 
+							data-content="{{Cette section sert à choisir les paramètres de l'horloge}}."></i>
+						</legend>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Largeur de l'horloge}}</label>
+							<div class="col-sm-1">
+								<div class="input-group">
+									<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="clocksize" placeholder="0" value="0"/>
+								</div>
+							</div>
+							<span>{{pixels}}</span>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Largeur de l'horloge}}" 
+							data-content="{{Saisissez ici la largeur en pixel de l'horloge}}.<br>
+							{{La valeur par défaut (ou si omise) est à}} 414 {{pixels si affichage sans les secondes et}} 620 {{si avec les secondes}}."></i>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-8">
+								<input type="checkbox" class="eqLogicAttr" data-l1key="configuration"  data-l2key="clockseconds">
+								<span>{{Affichage des secondes}}</span>
+								<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+								title="{{Affichage des secondes}}" 
+								data-content="{{En cochant cette case, vous activé l'affichage des secondes. La taille de l'horloge sera adaptée}}."></i>
+								<br>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-8">
+								<input type="checkbox" class="eqLogicAttr" data-l1key="configuration"  data-l2key="clocksecondsanime">
+								<span>{{Animation des secondes}}</span>
+								<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+								title="{{Animation des secondes}}" 
+								data-content="{{En cochant cette case, vous activé l'animation des secondes}}."></i>
+								<br>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend><i class="icon fa fa-eye"></i>   {{Options Graphiques}}
+						<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Options Graphiques}}" 
 							data-content="{{Cette section sert à choisir les options graphique de l'horloge}}."></i>
 						</legend>
 						<div class="form-group">
@@ -214,7 +254,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{Aucun}}',
 											'{{HTC Original}}',
 											'{{HTC Black}}',
-											'{{HTC White}}'
+											'{{HTC White}}',
+											'{{HTC Original demi-hauteur}}',
+											'{{HTC Black demi-hauteur}}',
+											'{{HTC White demi-hauteur}}'
 										);
 										foreach($backarray as $backidx=>$backname) {
 											echo '<option value="'.$backidx.'">'.$backidx.' - '.$backname.'</option>';

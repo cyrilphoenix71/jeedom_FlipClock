@@ -2,7 +2,13 @@
 
 Après avoir installé le plugin, il vous suffit de l'activer.
 
-Ce plugin n'a aucune configuration particulière.
+Ce plugin n'a aucune configuration particulière mais peut-être paramètrer avec les options suivantes :
+
+Paramètres :
+
+- Il est possible d'activer ou non l'affichage des secondes
+
+Options Graphiques :
 
 Il est possible de choisir le type d'horloge en indiquant son numero de type :
 - 1 = HTC Blanche
@@ -40,6 +46,9 @@ Il est possible de choisir le type de fond :
 - 2 = HTC Original
 - 3 = HTC Black
 - 4 = HTC White
+- 5 = HTC Original demi-hauteur
+- 6 = HTC Black demi-hauteur
+- 7 = HTC White demi-hauteur
 
 Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
 
