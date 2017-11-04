@@ -11,6 +11,7 @@ Paramètres :
 Options Graphiques :
 
 Il est possible de choisir le type d'horloge en indiquant son numero de type :
+
 - 1 = HTC Blanche
 - 2 = HTC Noire
 - 3 = HTC Rouge
