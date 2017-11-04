@@ -1,4 +1,5 @@
 Version 2.1
+
 - Ajout des fonds demi-hauteur (HTC Original, HTC Black, HTC White)
 - Correction image sans fond manquante
 - Ajout traduction page configuration
@@ -10,11 +11,10 @@ Version 2.1
 - Suppression cron30
 - Correction du probleme de fond transparent qui se desactive au changement de parametres
 - Ajout numero de version dans la configuration
-
-Version 2.0.4
 - Ajout screenshots
 
 Version 2.0
+
 - Ajout horloge Type 3 HTC Rouge
 - Ajout horloge Type 4 HTC Blanche bleutée
 - Ajout option choix de l'ombre (Noire, Blanche ou Sans)
@@ -29,9 +29,11 @@ Version 2.0
 - Nouvelle galerie
 
 Version 1.0
+
 - Création du plugin
 - Ajout horloge Type 1 HTC Blanche
 - Ajout horloge Type 2 HTC Noire
 
 TODO :
+
 - Voir pour utiliser box-shodow pour les ombres a la place d'images en triple

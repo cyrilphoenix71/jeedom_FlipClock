@@ -1,7 +1,9 @@
 === F.A.Q. du plugin
 
 Comment avoir le fond transparent sur mon horloge ?
-Via la configuration avancé de l'horloge.
+
+- Via la configuration avancé de l'horloge.
 
 Pourquoi en mode design le paramètre taille ne change rien ?
-Via le parametrage de l'horloge vous pouvez changer sa taille, la methode utilisée (un scale) remplace le paramètre jeedom en question.
+
+- Via le parametrage de l'horloge vous pouvez changer sa taille, la methode utilisée (un scale) remplace le paramètre jeedom en question.

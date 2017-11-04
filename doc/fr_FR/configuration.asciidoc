@@ -11,6 +11,7 @@ Paramètres :
 Options Graphiques :
 
 Il est possible de choisir le type d'horloge en indiquant son numero de type :
+
 - 1 = HTC Blanche
 - 2 = HTC Noire
 - 3 = HTC Rouge
@@ -19,6 +20,7 @@ Il est possible de choisir le type d'horloge en indiquant son numero de type :
 Par defaut ou si une valeur éronée est saisie, le type HTC Blanche sera selectionné.
 
 Il est possible de choisir le type d'ombre apparaissant sous l'horloge :
+
 - 1 = Noire
 - 2 = Blanche
 - 3 = Sans ombre
@@ -26,6 +28,7 @@ Il est possible de choisir le type d'ombre apparaissant sous l'horloge :
 Par defaut ou si une valeur éronée est saisie, le type noire sera selectionné.
 
 Il est possible de choisir le type de digits :
+
 - 1 = Noirs
 - 2 = Blancs
 - 3 = Rouges
@@ -33,6 +36,7 @@ Il est possible de choisir le type de digits :
 Par defaut ou si une valeur éronée est saisie, le type noirs sera selectionné.
 
 Il est possible de choisir le type de dost (séparateur heures/minutes) :
+
 - 1 = Sans
 - 2 = Blancs
 - 3 = Noirs
@@ -42,6 +46,7 @@ Il est possible de choisir le type de dost (séparateur heures/minutes) :
 Par defaut ou si une valeur éronée est saisie, le type Blancs sera selectionné.
 
 Il est possible de choisir le type de fond :
+
 - 1 = Aucun
 - 2 = HTC Original
 - 3 = HTC Black
@@ -53,6 +58,7 @@ Il est possible de choisir le type de fond :
 Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
 
 Il est possible de choisir le type d'ombre apparaissant sous le fond :
+
 - 1 = Noire
 - 2 = Blanche
 - 3 = Sans ombre
