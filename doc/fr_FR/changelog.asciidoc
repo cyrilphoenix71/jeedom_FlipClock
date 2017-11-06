@@ -1,3 +1,15 @@
+Version 2.2
+
+- Ajout choix d'options d'animation secondes (Sans, Flip, Clignotement dots)
+- Ajout horloge Type 5 HTC Blanche Rosée
+- Ajout horloge Type 6 HTC Blanche Verdatre
+- Ajout horloge Type 7 HTC Blanche Jaunatre
+- Ajout de nouveaux fonds (HTC rosé, HTC verdatre, HTC jaunatre, HTC bleutée)
+- Ajout option choix mode du fond (Plein ou Demi hauteur)
+- Ajout de nouveaux dots (Rosés, Verdatre, Jaunatres)
+- Ajout de nouveaux digits (Bleutés, Rosés, Verdatre, Jaunatres)
+- Affichage des horloges dans leur config propre et complete à la page d'accueil du plugin
+
 Version 2.1
 
 - Ajout des fonds demi-hauteur (HTC Original, HTC Black, HTC White)

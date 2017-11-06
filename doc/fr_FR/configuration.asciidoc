@@ -6,6 +6,8 @@ Ce plugin n'a aucune configuration particulière mais peut-être paramètrer ave
 
 Paramètres :
 
+- Il est possible de choisir la taille de l'horloge en définissant sa largeur
+- Il est possible de choisir le type d'animation des secondes (Flip ou Clignotement des dots). Le flip est utilisable que si les secondes sont affichées
 - Il est possible d'activer ou non l'affichage des secondes
 
 Options Graphiques :
@@ -15,7 +17,10 @@ Il est possible de choisir le type d'horloge en indiquant son numero de type :
 - 1 = HTC Blanche
 - 2 = HTC Noire
 - 3 = HTC Rouge
-- 4 = HTC Blanche bleutée
+- 4 = HTC Bleutée
+- 5 = HTC Rosée
+- 6 = HTC Verdatre
+- 7 = HTC Jaunatre
 
 Par defaut ou si une valeur éronée est saisie, le type HTC Blanche sera selectionné.
 
@@ -32,6 +37,10 @@ Il est possible de choisir le type de digits :
 - 1 = Noirs
 - 2 = Blancs
 - 3 = Rouges
+- 4 = Bleutés
+- 5 = Rosés
+- 6 = Verdatres
+- 7 = Jaunatres
 
 Par defaut ou si une valeur éronée est saisie, le type noirs sera selectionné.
 
@@ -41,7 +50,10 @@ Il est possible de choisir le type de dost (séparateur heures/minutes) :
 - 2 = Blancs
 - 3 = Noirs
 - 4 = Rouges
-- 5 - Bleutées
+- 5 = Bleutés
+- 6 = Rosés
+- 7 = Verdatres
+- 8 = Jaunatres
 
 Par defaut ou si une valeur éronée est saisie, le type Blancs sera selectionné.
 
@@ -51,9 +63,17 @@ Il est possible de choisir le type de fond :
 - 2 = HTC Original
 - 3 = HTC Black
 - 4 = HTC White
-- 5 = HTC Original demi-hauteur
-- 6 = HTC Black demi-hauteur
-- 7 = HTC White demi-hauteur
+- 5 = HTC Rosée
+- 6 = HTC Verdatre
+- 7 = HTC Jaunatre
+- 8 = HTC Bleutée
+
+Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
+
+Il est possible de choisir le mode du fond :
+
+- 1 = Pleine hauteur
+- 2 = Demi-hauteur
 
 Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
 

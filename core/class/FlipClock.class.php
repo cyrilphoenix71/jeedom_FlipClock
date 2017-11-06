@@ -59,12 +59,12 @@ class FlipClock extends eqLogic {
 			}
 		//Recuperation type horloge
 		$replace['#ClockType#'] = $this->getConfiguration('clocktype',1)+1;
-		if ($replace['#ClockType#']<1 || $replace['#ClockType#']>4) {
+		if ($replace['#ClockType#']<1 || $replace['#ClockType#']>7) {
 			$replace['#ClockType#'] = '1';
 		}
-		//Recuperation type numero
+		//Recuperation type digits
 		$replace['#ClockNum#'] = $this->getConfiguration('clocknum',1)+1;
-		if ($replace['#ClockNum#']<1 || $replace['#ClockNum#']>3) {
+		if ($replace['#ClockNum#']<1 || $replace['#ClockNum#']>7) {
 			$replace['#ClockNum#'] = '1';
 		}
 		//Recuperation type ombre
@@ -74,12 +74,17 @@ class FlipClock extends eqLogic {
 		}
 		//Recuperation type fond
 		$replace['#ClockBack#'] = $this->getConfiguration('clockback',1)+1;
-		if ($replace['#ClockBack#']<1 || $replace['#ClockBack#']>7) {
+		if ($replace['#ClockBack#']<1 || $replace['#ClockBack#']>8) {
 			$replace['#ClockBack#'] = '1';
+		}
+		//Recuperation mode fond
+		$replace['#ClockBackMode#'] = $this->getConfiguration('clockbackmode',0);
+		if ($replace['#ClockBackMode#']<0 || $replace['#ClockBackMode#']>1) {
+			$replace['#ClockBackMode#'] = '0';
 		}
 		//Recuperation type dots
 		$replace['#ClockDots#'] = $this->getConfiguration('clockdots',1)+1;
-		if ($replace['#ClockDots#']<1 || $replace['#ClockDots#']>5) {
+		if ($replace['#ClockDots#']<1 || $replace['#ClockDots#']>8) {
 			$replace['#ClockDots#'] = '1';
 		}
 		//Recuperation type ombre pour fond
@@ -89,8 +94,11 @@ class FlipClock extends eqLogic {
 		}
 		//Recuperation option secondes
 		$replace['#ClockSeconds#'] = $this->getConfiguration('clockseconds',0);
+		//Recuperation animation secondes
 		$replace['#ClockSecondsAnime#'] = $this->getConfiguration('clocksecondsanime',0);
-			
+		if ($replace['#ClockSecondsAnime#']<0 || $replace['#ClockSecondsAnime#']>2) {
+			$replace['#ClockSecondsAnime#'] = '0';
+		}
 		//Adaptation tailles mini
 		$replace['#minWidth#'] = '414';
 		if ($replace['#ClockSeconds#']=='1') {

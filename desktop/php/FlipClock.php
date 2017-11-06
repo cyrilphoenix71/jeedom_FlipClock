@@ -34,6 +34,7 @@ $eqLogics = eqLogic::byType('FlipClock');
 		</div>
 		<legend><i class="fa fa-clock-o"></i>  {{Mes Horloges}}</legend>
 		<div class="eqLogicThumbnailContainer">
+			<link rel="stylesheet" type="text/css" href="plugins/FlipClock/core/template/dashboard/css/digiFlipClock.css" />
 			<div class="cursor eqLogicAction" data-action="add" style="text-align: center; background-color : #ffffff; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 140px;margin-left : 10px;" >
 				<i class="fa fa-plus-circle" style="font-size : 7em;color:#94ca02;margin-top : 15px;"></i>
 				<br>
@@ -42,16 +43,44 @@ $eqLogics = eqLogic::byType('FlipClock');
 			<?php
 			foreach ($eqLogics as $eqLogic) {
 				$opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
+				$clockImagesPath = 'plugins/FlipClock/core/template/dashboard/images/clock';
+				$clockImagesNumPath = 'plugins/FlipClock/core/template/dashboard/images/num';
+				$clockImagesBackPath = 'plugins/FlipClock/core/template/dashboard/images/back/';
+				$clockImagesDotsPath = 'plugins/FlipClock/core/template/dashboard/images/dots/';
 				$typeClock = $eqLogic->getConfiguration('clocktype','1')+1;
-				if ($typeClock<1 || $typeClock>4) {
-					$typeClock = '1';
-				}
-				echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
-				echo "<center>";
-				echo '<img src="plugins/FlipClock/core/template/dashboard/images/Type'.$typeClock.'.png" height="105" width="95" />';
-				echo "</center>";
-				echo '<span style="font-size : 1.1em;position:relative; top : 10px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>' . $eqLogic->getHumanName(true, true) . '</center></span>';
-				echo '</div>';
+				$typeGlow = $eqLogic->getConfiguration('clockglow','1')+1;
+				$typeBackGlow = $eqLogic->getConfiguration('clockbackglow','1')+1;
+				$typeDigits = $eqLogic->getConfiguration('clocknum','1')+1;
+				$typeClock = $eqLogic->getConfiguration('clocktype','1')+1;
+				$typeDots = $eqLogic->getConfiguration('clockdots','1')+1;
+				$typeBack = $eqLogic->getConfiguration('clockback','1')+1;
+				$typeBackMode = $eqLogic->getConfiguration('clockbackmode','1');
+				
+				echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 240px;margin-left : 10px;' . $opacity . '" >';
+					echo '<span id="digital_container" style="top:0px;left:0px;">';
+						echo '<span id="clock" style="transform: scale(0.4);margin-left:-35%;margin-right:-35%;margin-top:-13%;margin-bottom: -13%;">';
+							if ($typeBackMode == '1') {
+								echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'backD'.$typeBack.'.png" /></span>';
+							} else {
+								echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'back'.$typeBack.'.png" /></span>';
+							}
+							echo '<span id="dots_bg"><img src="'.$clockImagesDotsPath.'dots'.$typeDots.'.png" /></span>';
+							echo '<span id="hours">';
+								echo '<span class="line'.$typeClock.'" ></span>';
+								echo '<span id="hours_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/2.png" id="fhd" class="first_digit" />';
+								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/0.png" id="shd" class="second_digit" />';
+							echo '</span>';
+							echo '<span id="minutes">';
+								echo '<span class="line'.$typeClock.'" ></span>';
+								echo '<span id="minutes_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/3.png" id="fmd" class="first_digit" />';
+								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/7.png" id="smd" class="second_digit" />';
+							echo '</span>';
+						echo '</span>';
+					echo '</span>';
+					echo '<span style="font-size : 1.1em;position:relative; top : 110px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>'.$eqLogic->getHumanName(true, true).'</center></span>';
+				echo '</div>';	
 			}
 			?>
 		</div>
@@ -132,24 +161,45 @@ $eqLogics = eqLogic::byType('FlipClock');
 							{{La valeur par défaut (ou si omise) est à}} 414 {{pixels si affichage sans les secondes et}} 620 {{si avec les secondes}}."></i>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-offset-3 col-sm-8">
-								<input type="checkbox" class="eqLogicAttr" data-l1key="configuration"  data-l2key="clockseconds">
-								<span>{{Affichage des secondes}}</span>
-								<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
-								title="{{Affichage des secondes}}" 
-								data-content="{{En cochant cette case, vous activé l'affichage des secondes. La taille de l'horloge sera adaptée}}."></i>
-								<br>
+							<label class="col-sm-3 control-label">{{Animation des secondes}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clocksecondsanime">
+									<?php
+										$secarray = array(
+											'{{Sans}}',
+											'{{Flip}}',
+											'{{Clignotement dots}}'
+										);
+										foreach($secarray as $secidx=>$secname) {
+											echo '<option value="'.$secidx.'">'.$secidx.' - '.$secname.'</option>';
+										}
+									?>
+								</select>
 							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Animation des secondes}}" 
+							data-content="{{Choisissez ici le type d'animation des secondes}}.<br>
+							{{La valeur par défaut est sans}}."></i>
 						</div>
 						<div class="form-group">
-							<div class="col-sm-offset-3 col-sm-8">
-								<input type="checkbox" class="eqLogicAttr" data-l1key="configuration"  data-l2key="clocksecondsanime">
-								<span>{{Animation des secondes}}</span>
-								<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
-								title="{{Animation des secondes}}" 
-								data-content="{{En cochant cette case, vous activé l'animation des secondes}}."></i>
-								<br>
+							<label class="col-sm-3 control-label">{{Affichage des secondes}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clockseconds">
+									<?php
+										$fondarray = array(
+											'{{Sans}}',
+											'{{Avec}}'
+										);
+										foreach($fondarray as $fondidx=>$fondname) {
+											echo '<option value="'.$fondidx.'">'.$fondidx.' - '.$fondname.'</option>';
+										}
+									?>
+								</select>
 							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Affichage des secondes}}" 
+							data-content="{{Choisissez ici l'affichage secondes. La taille de l'horloge sera adaptée}}.<br>
+							{{La valeur par défaut est sans}}."></i>
 						</div>
 					</fieldset>
 					<fieldset>
@@ -167,7 +217,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{HTC Blanche}}',
 											'{{HTC Noire}}',
 											'{{HTC Rouge}}',
-											'{{HTC Bleutée}}'
+											'{{HTC Bleutée}}',
+											'{{HTC Rosée}}',
+											'{{HTC Verdatre}}',
+											'{{HTC Jaunatre}}'
 										);
 										foreach($typearray as $typeidx=>$typename) {
 											echo '<option value="'.$typeidx.'">'.$typeidx.' - '.$typename.'</option>';
@@ -209,7 +262,11 @@ $eqLogics = eqLogic::byType('FlipClock');
 										$numarray = array(
 											'{{Noirs}}',
 											'{{Blancs}}',
-											'{{Rouges}}'
+											'{{Rouges}}',
+											'{{Bleutés}}',
+											'{{Rosés}}',
+											'{{Verdatres}}',
+											'{{Jaunatres}}'
 										);
 										foreach($numarray as $numidx=>$numname) {
 											echo '<option value="'.$numidx.'">'.$numidx.' - '.$numname.'</option>';
@@ -232,7 +289,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{Blancs}}',
 											'{{Noirs}}',
 											'{{Rouges}}',
-											'{{Bleutés}}'
+											'{{Bleutés}}',
+											'{{Rosés}}',
+											'{{Verdatres}}',
+											'{{Jaunatres}}'
 										);
 										foreach($dotsarray as $dotsidx=>$dotsname) {
 											echo '<option value="'.$dotsidx.'">'.$dotsidx.' - '.$dotsname.'</option>';
@@ -255,9 +315,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{HTC Original}}',
 											'{{HTC Black}}',
 											'{{HTC White}}',
-											'{{HTC Original demi-hauteur}}',
-											'{{HTC Black demi-hauteur}}',
-											'{{HTC White demi-hauteur}}'
+											'{{HTC Rosé}}',
+											'{{HTC Verdatre}}',
+											'{{HTC Jaunatre}}',
+											'{{HTC Bleuté}}'
 										);
 										foreach($backarray as $backidx=>$backname) {
 											echo '<option value="'.$backidx.'">'.$backidx.' - '.$backname.'</option>';
@@ -266,10 +327,30 @@ $eqLogics = eqLogic::byType('FlipClock');
 								</select>
 							</div>
 							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
-							title="{{Fond}}" 
+							title="{{Type de fond}}" 
 							data-content="{{Choisissez ici le type de fond}}.<br>
 							{{La valeur par défaut est aucun}}."></i>
-						</div>	
+						</div>
+						<div class="form-group">
+							<label class="col-sm-3 control-label">{{Mode du fond}}</label>
+							<div class="col-sm-2">
+								<select class="form-control eqLogicAttr" data-l1key="configuration" data-l2key="clockbackmode">
+									<?php
+										$backmodearray = array(
+											'{{Pleine hauteur}}',
+											'{{Demi hauteur}}'
+										);
+										foreach($backmodearray as $backmodeidx=>$backmodename) {
+											echo '<option value="'.$backmodeidx.'">'.$backmodeidx.' - '.$backmodename.'</option>';
+										}
+									?>
+								</select>
+							</div>
+							<i class="icon fa fa-question-circle" style="margin-top:12px;margin-left:10px" data-placement="right" data-toggle="popover" data-trigger="hover" data-animation=true data-delay=200 data-html=true 
+							title="{{Mode du fond}}" 
+							data-content="{{Choisissez ici le mode du fond}}.<br>
+							{{La valeur par défaut est Plaine hauteur}}."></i>
+						</div>
 						<div class="form-group">
 							<label class="col-sm-3 control-label">{{Type d'ombre de fond}}</label>
 							<div class="col-sm-2">

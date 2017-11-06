@@ -25,6 +25,7 @@
 				clockBackGlow: '1',
 				clockSeconds: '0',
 				clockSecondsAnime: '1',
+				clockbackMode: '0'
             };
 
             var regional = [];
@@ -54,6 +55,7 @@
 				$this.clockBackGlow = o.clockBackGlow;
 				$this.clockSeconds = o.clockSeconds;
 				$this.clockSecondsAnime = o.clockSecondsAnime;
+				$this.clockbackMode = o.clockbackMode;
                 $this.timeUpdate = '';
                 $this.displayClock($this);           
 
@@ -73,7 +75,7 @@
     $.fn.delay = function(el) {
         var now = new Date();
 		var delay;
-		if (el.clockSeconds == '1') {
+		if (el.clockSeconds == '1' || el.clockSecondsAnime == '2') {
 			delay = 1000;
 		} else {
 			delay = (60 - now.getSeconds()) * 1000;
@@ -138,13 +140,24 @@
 		// Construction graphique
 		timeOld = '';
 		if (el.clockSeconds == '1') {
-			timeOld += '<div id="backseconds_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'back' + el.clockBack + '.png" /></div>';
-			timeOld += '<div id="backseconds2_bg"><div id="backseconds2b_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'back' + el.clockBack + '.png" /></div></div>';
+			if (el.clockbackMode == '1') {
+				timeOld += '<div id="backseconds_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'backD' + el.clockBack + '.png" /></div>';
+				timeOld += '<div id="backseconds2_bg"><div id="backseconds2b_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'backD' + el.clockBack + '.png" /></div></div>';
+			} else {
+				timeOld += '<div id="backseconds_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'back' + el.clockBack + '.png" /></div>';
+				timeOld += '<div id="backseconds2_bg"><div id="backseconds2b_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'back' + el.clockBack + '.png" /></div></div>';
+			}
 		} else {
-			timeOld += '<div id="back_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'back' + el.clockBack + '.png" /></div>';
+			if (el.clockbackMode == '1') {
+				timeOld += '<div id="back_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'backD' + el.clockBack + '.png" /></div>';
+			} else {
+				timeOld += '<div id="back_bg"><img src="' + el.clockImagesBackPath + el.clockBackGlow + 'back' + el.clockBack + '.png" /></div>';
+			}
 		}
-		timeOld += '<div id="dots_bg"><img src="' + el.clockImagesDotsPath + 'dots' + el.clockDots + '.png" /></div>';
-		if (el.clockSeconds == '1') {
+		if (el.clockSecondsAnime != '2' || (now_seconds % 2) == 0) {
+			timeOld += '<div id="dots_bg"><img src="' + el.clockImagesDotsPath + 'dots' + el.clockDots + '.png" /></div>';
+		}
+		if (el.clockSeconds == '1' && (el.clockSecondsAnime != '2' || (now_seconds % 2) == 0)) {
 			timeOld += '<div id="dots2_bg"><img src="' + el.clockImagesDotsPath + 'dots' + el.clockDots + '.png" /></div>';
 		}
 		timeOld += '<div id="hours"><div class="line' + el.clockType + '" ></div>';
