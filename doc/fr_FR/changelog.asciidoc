@@ -1,3 +1,8 @@
+:imagesdir: ../images
+:icons:
+
+==== Changelog
+
 Version 2.2
 
 - Ajout choix d'options d'animation secondes (Sans, Flip, Clignotement dots)

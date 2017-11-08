@@ -1,15 +1,27 @@
-== Description
-include::presentation.asciidoc[]
+:imagesdir: ../images
+:icons:
+
+== FlipClock
+image:FlipClock_icon.png[]
+
+{nbsp} +
+
+=== Description
+link:description.asciidoc[]
 
 '''
-== Configuration
-include::configuration.asciidoc[]
+=== Installation
+link:installation.asciidoc[]
 
 '''
-== FAQ
-include::faq.asciidoc[]
+=== Configuration
+link:configuration.asciidoc[]
 
 '''
-== Changelog
-include::changelog.asciidoc[]
+=== FAQ
+link:faq.asciidoc[]
+
+'''
+=== Changelog
+link:changelog.asciidoc[]
 
