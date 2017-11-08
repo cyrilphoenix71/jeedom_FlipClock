@@ -96,4 +96,5 @@ Il est possible de choisir le type d'ombre apparaissant sous le fond :
 
 Par defaut ou si une valeur éronée est saisie, le type sans ombre sera selectionné.
 
-
+=== Retour
+link:index.asciidoc[]
