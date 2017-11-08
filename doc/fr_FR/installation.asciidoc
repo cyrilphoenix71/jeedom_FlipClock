@@ -1,7 +1,7 @@
 :imagesdir: ../images
 :icons:
 
-==== Installation du Plugin
+== Installation du Plugin
 
 L'installation se fait comme une installation classique de plugin, aucune disposition particulière n'est a prendre.
 
