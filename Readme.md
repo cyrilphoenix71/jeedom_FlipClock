@@ -12,6 +12,6 @@ Buy it on the [Market page](https://www.jeedom.com/market/index.php?v=d&p=market
 
 ### Documentation
 
-Vous trouverez la [documentation](https://github.com/cyrilphoenix71/jeedom_FlipClock/blob/stable/doc/fr_FR/index.asciidoc)
+Vous trouverez la documentation [ici](https://github.com/cyrilphoenix71/jeedom_FlipClock/blob/stable/doc/fr_FR/index.asciidoc)
 
 <img src="doc/images/FlipClock_screenshot1.png" align="center">

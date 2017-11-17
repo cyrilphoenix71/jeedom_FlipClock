@@ -3,16 +3,20 @@
 
 == Configuration du plugin
 
-Après avoir installé le plugin, il vous suffit de l'activer.
+Après avoir installé le plugin, il vous suffit de l'activer :
+
 image:FlipClock_screenshot5.png[]
 
 Ce plugin n'a aucune configuration particulière mais peut-être paramètrer graphiquement et avec certaines options :
+
 image:FlipClock_screenshot6.png[]
 
 Vous retrouverez ces parametres dans la page du plugin :
+
 image:FlipClock_screenshot3.png[]
 
 Il suffit de choisir l'equipement voulu ou d'en créer un nouveau pour acceder a son parametrage :
+
 image:FlipClock_screenshot4.png[]
 
 Paramètres :

@@ -10,7 +10,9 @@ On peut choisir parmis une liste de type visualisable dans la galerie ci-dessous
 Une animation est visualisable au changement de minutes ou d'heure.
 
 Une petite copie d'écran du rendu du widget du plugin :
+
 image:FlipClock_screenshot1.png[]
+
 image:FlipClock_screenshot2.png[]
 
 === Retour
