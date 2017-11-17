@@ -1,8 +1,8 @@
-# Plugin FlipClock
+# Plugin FlipClock pour Jeedom
 
 <img src="doc/images/FlipClock_icon.png" align="right">
 
-Ffficher une horloge de type Flip personnalisable et animée.
+Afficher une horloge de type Flip personnalisable et animée.
 
 
 ### Market
