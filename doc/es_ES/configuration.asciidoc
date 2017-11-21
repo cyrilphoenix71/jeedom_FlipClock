@@ -1,0 +1,104 @@
+:imagesdir: ../images
+:icons:
+
+== Configuration du plugin
+
+Après avoir installé le plugin, il vous suffit de l'activer :
+
+image:FlipClock_screenshot5.png[]
+
+Ce plugin n'a aucune configuration particulière mais peut-être paramètrer graphiquement et avec certaines options :
+
+image:FlipClock_screenshot6.png[]
+
+Vous retrouverez ces parametres dans la page du plugin :
+
+image:FlipClock_screenshot3.png[]
+
+Il suffit de choisir l'equipement voulu ou d'en créer un nouveau pour acceder a son parametrage :
+
+image:FlipClock_screenshot4.png[]
+
+Paramètres :
+
+- Il est possible de choisir la taille de l'horloge en définissant sa largeur
+- Il est possible de choisir le type d'animation des secondes (Flip ou Clignotement des dots). Le flip est utilisable que si les secondes sont affichées
+- Il est possible d'activer ou non l'affichage des secondes
+
+Options Graphiques :
+
+Il est possible de choisir le type d'horloge en indiquant son numero de type :
+
+- 1 = HTC Blanche
+- 2 = HTC Noire
+- 3 = HTC Rouge
+- 4 = HTC Bleutée
+- 5 = HTC Rosée
+- 6 = HTC Verdatre
+- 7 = HTC Jaunatre
+
+Par defaut ou si une valeur éronée est saisie, le type HTC Blanche sera selectionné.
+
+Il est possible de choisir le type d'ombre apparaissant sous l'horloge :
+
+- 1 = Noire
+- 2 = Blanche
+- 3 = Sans ombre
+
+Par defaut ou si une valeur éronée est saisie, le type noire sera selectionné.
+
+Il est possible de choisir le type de digits :
+
+- 1 = Noirs
+- 2 = Blancs
+- 3 = Rouges
+- 4 = Bleutés
+- 5 = Rosés
+- 6 = Verdatres
+- 7 = Jaunatres
+
+Par defaut ou si une valeur éronée est saisie, le type noirs sera selectionné.
+
+Il est possible de choisir le type de dost (séparateur heures/minutes) :
+
+- 1 = Sans
+- 2 = Blancs
+- 3 = Noirs
+- 4 = Rouges
+- 5 = Bleutés
+- 6 = Rosés
+- 7 = Verdatres
+- 8 = Jaunatres
+
+Par defaut ou si une valeur éronée est saisie, le type Blancs sera selectionné.
+
+Il est possible de choisir le type de fond :
+
+- 1 = Aucun
+- 2 = HTC Original
+- 3 = HTC Black
+- 4 = HTC White
+- 5 = HTC Rosée
+- 6 = HTC Verdatre
+- 7 = HTC Jaunatre
+- 8 = HTC Bleutée
+
+Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
+
+Il est possible de choisir le mode du fond :
+
+- 1 = Pleine hauteur
+- 2 = Demi-hauteur
+
+Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
+
+Il est possible de choisir le type d'ombre apparaissant sous le fond :
+
+- 1 = Noire
+- 2 = Blanche
+- 3 = Sans ombre
+
+Par defaut ou si une valeur éronée est saisie, le type sans ombre sera selectionné.
+
+=== Retour
+link:index.asciidoc[]

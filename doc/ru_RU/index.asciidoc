@@ -1,0 +1,26 @@
+:imagesdir: ../images
+:icons:
+
+== FlipClock
+image:FlipClock_icon.png[]
+
+{nbsp} +
+
+=== Description
+link:description.asciidoc[]
+
+'''
+=== Installation
+link:installation.asciidoc[]
+
+'''
+=== Configuration
+link:configuration.asciidoc[]
+
+'''
+=== FAQ
+link:faq.asciidoc[]
+
+'''
+=== Changelog
+link:changelog.asciidoc[]
