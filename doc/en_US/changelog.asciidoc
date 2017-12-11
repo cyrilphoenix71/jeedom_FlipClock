@@ -1,0 +1,59 @@
+:imagesdir: ../images
+:icons:
+
+== Changelog
+
+Version 2.2
+
+- Ajout choix d'options d'animation secondes (Sans, Flip, Clignotement dots)
+- Ajout horloge Type 5 HTC Blanche Rosée
+- Ajout horloge Type 6 HTC Blanche Verdatre
+- Ajout horloge Type 7 HTC Blanche Jaunatre
+- Ajout de nouveaux fonds (HTC rosé, HTC verdatre, HTC jaunatre, HTC bleutée)
+- Ajout option choix mode du fond (Plein ou Demi hauteur)
+- Ajout de nouveaux dots (Rosés, Verdatre, Jaunatres)
+- Ajout de nouveaux digits (Bleutés, Rosés, Verdatre, Jaunatres)
+- Affichage des horloges dans leur config propre et complete à la page d'accueil du plugin
+
+Version 2.1
+
+- Ajout des fonds demi-hauteur (HTC Original, HTC Black, HTC White)
+- Correction image sans fond manquante
+- Ajout traduction page configuration
+- Ajout support affichage secondes
+- Ajout adaptation automatique largeur mini du widget
+- Ajout option desactivation animation des secondes
+- Desactivation edition taille de la tuile
+- Ajout parametrage de la taille de l'horloge (via un scale donc le scale jeedom du mode design ne sert a rien)
+- Suppression cron30
+- Correction du probleme de fond transparent qui se desactive au changement de parametres
+- Ajout numero de version dans la configuration
+- Ajout screenshots
+
+Version 2.0
+
+- Ajout horloge Type 3 HTC Rouge
+- Ajout horloge Type 4 HTC Blanche bleutée
+- Ajout option choix de l'ombre (Noire, Blanche ou Sans)
+- Ajout option choix du type de digits (Noirs, Blancs ou Rouge)
+- Ajout option choix du type de dots (Sans, Blancs, Noirs, Rouges ou Bleutés)
+- Ajout option choix du type de fond (Aucun, HTC Original, HTC Black, HTC White)
+- Ajout option choix de l'ombre de fond (Noire, Blanche ou Sans)
+- Optimisation page configuration avec liste de choix
+- Centralisation des scripts
+- Nettoyage
+- fr_FR
+- Nouvelle galerie
+
+Version 1.0
+
+- Création du plugin
+- Ajout horloge Type 1 HTC Blanche
+- Ajout horloge Type 2 HTC Noire
+
+TODO :
+
+- Voir pour utiliser box-shodow pour les ombres a la place d'images en triple
+
+=== Retour
+link:index.asciidoc[]
