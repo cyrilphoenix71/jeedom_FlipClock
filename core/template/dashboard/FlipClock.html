@@ -7,14 +7,20 @@
 			<div id="clock">
 				<script type="text/javascript">
 					$('#digiFlipClock#id#').jdigiFlipClock({clockType:#ClockType#,clockGlow:#ClockGlow#,clockNum:#ClockNum#,clockBack:#ClockBack#,clockDots:#ClockDots#,clockBackGlow:#ClockBackGlow#,clockSeconds:#ClockSeconds#,clockSecondsAnime:#ClockSecondsAnime#,clockbackMode:#ClockBackMode#});
-					$("#plugin_container").css("transform","scale(#ClockSize#)");
 				</script>		
 			</div>
 		</div>
 	</div>
+	<script>
+      var $eqLogic =$('.eqLogic[data-eqLogic_uid=#uid#]');
+      $eqLogic.css('transform', 'scale(#ClockSize#)');
+      $eqLogic.css('-webkit-transform', 'scale(#ClockSize#)');
+      $eqLogic.css('-moz-transform', 'scale(#ClockSize#)');
+      $eqLogic.css('-ms-transform', 'scale(#ClockSize#)');
+      $eqLogic.css('-o-transform', 'scale(#ClockSize#)');
+    </script>
 </div>
 				
 <script type="text/javascript">
 	$('#digiFlipClock#id#').jdigiFlipClock({clockType:#ClockType#,clockGlow:#ClockGlow#,clockNum:#ClockNum#,clockBack:#ClockBack#,clockDots:#ClockDots#,clockBackGlow:#ClockBackGlow#,clockSeconds:#ClockSeconds#,clockSecondsAnime:#ClockSecondsAnime#,clockbackMode:#ClockBackMode#});
-	$("#plugin_container").css("transform","scale(#ClockSize#)");
 </script>

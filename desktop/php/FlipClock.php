@@ -55,32 +55,66 @@ $eqLogics = eqLogic::byType('FlipClock');
 				$typeDots = $eqLogic->getConfiguration('clockdots','1')+1;
 				$typeBack = $eqLogic->getConfiguration('clockback','1')+1;
 				$typeBackMode = $eqLogic->getConfiguration('clockbackmode','1');
-				
-				echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 240px;margin-left : 10px;' . $opacity . '" >';
-					echo '<span id="digital_container" style="top:0px;left:0px;">';
-						echo '<span id="clock" style="transform: scale(0.4);margin-left:-35%;margin-right:-35%;margin-top:-13%;margin-bottom: -13%;">';
-							if ($typeBackMode == '1') {
-								echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'backD'.$typeBack.'.png" /></span>';
-							} else {
-								echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'back'.$typeBack.'.png" /></span>';
-							}
-							echo '<span id="dots_bg"><img src="'.$clockImagesDotsPath.'dots'.$typeDots.'.png" /></span>';
-							echo '<span id="hours">';
-								echo '<span class="line'.$typeClock.'" ></span>';
-								echo '<span id="hours_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
-								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/2.png" id="fhd" class="first_digit" />';
-								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/0.png" id="shd" class="second_digit" />';
-							echo '</span>';
-							echo '<span id="minutes">';
-								echo '<span class="line'.$typeClock.'" ></span>';
-								echo '<span id="minutes_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
-								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/3.png" id="fmd" class="first_digit" />';
-								echo '<img src="'.$clockImagesNumPath.$typeDigits.'/7.png" id="smd" class="second_digit" />';
+				$typeSeconds = $eqLogic->getConfiguration('clockseconds','1');
+				if ($typeSeconds == '1') {	
+					echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 330px;margin-left : 10px;' . $opacity . '" >';
+						echo '<span id="digital_container" style="top:0px;left:0px;">';
+							echo '<span id="clock" style="transform: scale(0.4);margin-left:-43%;margin-right:-43%;margin-top:-9%;margin-bottom: -13%;">';
+								if ($typeBackMode == '1') {
+									echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'backD'.$typeBack.'.png" /></span>';
+								} else {
+									echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'back'.$typeBack.'.png" /></span>';
+								}
+								echo '<span id="dots_bg"><img src="'.$clockImagesDotsPath.'dots'.$typeDots.'.png" /></span>';
+								echo '<span id="hours">';
+									echo '<span class="line'.$typeClock.'" ></span>';
+									echo '<span id="hours_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/2.png" id="fhd" class="first_digit" />';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/0.png" id="shd" class="second_digit" />';
+								echo '</span>';
+								echo '<span id="minutes">';
+									echo '<span class="line'.$typeClock.'" ></span>';
+									echo '<span id="minutes_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/3.png" id="fmd" class="first_digit" />';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/7.png" id="smd" class="second_digit" />';
+								echo '</span>';
+								echo '<span id="seconds">';
+									echo '<span class="line'.$typeClock.'" ></span>';
+									echo '<span id="seconds_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/4.png" id="fmd" class="first_digit" />';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/6.png" id="smd" class="second_digit" />';
+								echo '</span>';
 							echo '</span>';
 						echo '</span>';
-					echo '</span>';
-					echo '<span style="font-size : 1.1em;position:relative; top : 110px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>'.$eqLogic->getHumanName(true, true).'</center></span>';
-				echo '</div>';	
+						echo '<span style="font-size : 1.1em;position:relative; top : 110px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>'.$eqLogic->getHumanName(true, true).'</center></span>';
+					echo '</div>';	
+				} else {
+					echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff ; height : 180px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 240px;margin-left : 10px;' . $opacity . '" >';
+						echo '<span id="digital_container" style="top:0px;left:0px;">';
+							echo '<span id="clock" style="transform: scale(0.4);margin-left:-35%;margin-right:-35%;margin-top:-13%;margin-bottom: -13%;">';
+								if ($typeBackMode == '1') {
+									echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'backD'.$typeBack.'.png" /></span>';
+								} else {
+									echo '<span id="back_bg"><img src="'.$clockImagesBackPath.$typeBackGlow.'back'.$typeBack.'.png" /></span>';
+								}
+								echo '<span id="dots_bg"><img src="'.$clockImagesDotsPath.'dots'.$typeDots.'.png" /></span>';
+								echo '<span id="hours">';
+									echo '<span class="line'.$typeClock.'" ></span>';
+									echo '<span id="hours_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/2.png" id="fhd" class="first_digit" />';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/0.png" id="shd" class="second_digit" />';
+								echo '</span>';
+								echo '<span id="minutes">';
+									echo '<span class="line'.$typeClock.'" ></span>';
+									echo '<span id="minutes_bg"><img src="'.$clockImagesPath.$typeClock."/".$typeGlow.'clockbg1.png" /></span>';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/3.png" id="fmd" class="first_digit" />';
+									echo '<img src="'.$clockImagesNumPath.$typeDigits.'/7.png" id="smd" class="second_digit" />';
+								echo '</span>';
+							echo '</span>';
+						echo '</span>';
+						echo '<span style="font-size : 1.1em;position:relative; top : 110px;word-break: break-all;white-space: pre-wrap;word-wrap: break-word;"><center>'.$eqLogic->getHumanName(true, true).'</center></span>';
+					echo '</div>';
+				}
 			}
 			?>
 		</div>
