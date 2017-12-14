@@ -165,7 +165,7 @@ div[id^=image]:target .expand {
 	<div class="form-group">
 		<br>
 		<label class="col-sm-2 control-label">{{Version}} :</label>
-		<div class="col-lg-8" style="margin-top:9px">2.3<br><br>
+		<div class="col-lg-8" style="margin-top:9px">2.4<br><br>
 		</div>
 		<br>
 	</div>

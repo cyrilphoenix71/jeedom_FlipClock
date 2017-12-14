@@ -186,3 +186,25 @@
     z-index:140;
     font-size:1px;
 }
+
+.line8 {
+    width:175px;
+    height:2px;
+    background:#DBDBFF;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:140;
+    font-size:1px;
+}
+
+.line9 {
+    width:175px;
+    height:2px;
+    background:#FFDACF;
+    position:absolute;
+    top:97px;
+    left:12px;
+    z-index:140;
+    font-size:1px;
+}

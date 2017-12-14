@@ -253,8 +253,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{HTC Rouge}}',
 											'{{HTC Bleutée}}',
 											'{{HTC Rosée}}',
-											'{{HTC Verdatre}}',
-											'{{HTC Jaunatre}}'
+											'{{HTC Verdâtre}}',
+											'{{HTC Jaunâtre}}',
+											'{{HTC Violâtre}}',
+											'{{HTC Orangée}}'
 										);
 										foreach($typearray as $typeidx=>$typename) {
 											echo '<option value="'.$typeidx.'">'.$typeidx.' - '.$typename.'</option>';
@@ -299,8 +301,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{Rouges}}',
 											'{{Bleutés}}',
 											'{{Rosés}}',
-											'{{Verdatres}}',
-											'{{Jaunatres}}'
+											'{{Verdâtres}}',
+											'{{Jaunâtres}}',
+											'{{Violâtres}}',
+											'{{Orangés}}'
 										);
 										foreach($numarray as $numidx=>$numname) {
 											echo '<option value="'.$numidx.'">'.$numidx.' - '.$numname.'</option>';
@@ -325,8 +329,10 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{Rouges}}',
 											'{{Bleutés}}',
 											'{{Rosés}}',
-											'{{Verdatres}}',
-											'{{Jaunatres}}'
+											'{{Verdâtres}}',
+											'{{Jaunâtres}}',
+											'{{Violâtres}}',
+											'{{Orangés}}'
 										);
 										foreach($dotsarray as $dotsidx=>$dotsname) {
 											echo '<option value="'.$dotsidx.'">'.$dotsidx.' - '.$dotsname.'</option>';
@@ -352,7 +358,9 @@ $eqLogics = eqLogic::byType('FlipClock');
 											'{{HTC Rosé}}',
 											'{{HTC Verdatre}}',
 											'{{HTC Jaunatre}}',
-											'{{HTC Bleuté}}'
+											'{{HTC Bleuté}}',
+											'{{HTC Violâtre}}',
+											'{{HTC Orangé}}'
 										);
 										foreach($backarray as $backidx=>$backname) {
 											echo '<option value="'.$backidx.'">'.$backidx.' - '.$backname.'</option>';
