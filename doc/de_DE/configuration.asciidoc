@@ -34,8 +34,10 @@ Il est possible de choisir le type d'horloge en indiquant son numero de type :
 - 3 = HTC Rouge
 - 4 = HTC Bleutée
 - 5 = HTC Rosée
-- 6 = HTC Verdatre
-- 7 = HTC Jaunatre
+- 6 = HTC Verdâtre
+- 7 = HTC Jaunâtre
+- 8 = HTC Violâtre
+- 9 = HTC Orangée
 
 Par defaut ou si une valeur éronée est saisie, le type HTC Blanche sera selectionné.
 
@@ -54,8 +56,10 @@ Il est possible de choisir le type de digits :
 - 3 = Rouges
 - 4 = Bleutés
 - 5 = Rosés
-- 6 = Verdatres
-- 7 = Jaunatres
+- 6 = Verdâtres
+- 7 = Jaunâtres
+- 8 = Violâtres
+- 9 = Orangés
 
 Par defaut ou si une valeur éronée est saisie, le type noirs sera selectionné.
 
@@ -69,6 +73,8 @@ Il est possible de choisir le type de dost (séparateur heures/minutes) :
 - 6 = Rosés
 - 7 = Verdatres
 - 8 = Jaunatres
+- 9 = Violâtres
+- 10 = Orangés
 
 Par defaut ou si une valeur éronée est saisie, le type Blancs sera selectionné.
 
@@ -82,6 +88,8 @@ Il est possible de choisir le type de fond :
 - 6 = HTC Verdatre
 - 7 = HTC Jaunatre
 - 8 = HTC Bleutée
+- 9 = HTC Violâtre
+- 10 = HTC Orangé
 
 Par defaut ou si une valeur éronée est saisie, le type aucun sera selectionné.
 

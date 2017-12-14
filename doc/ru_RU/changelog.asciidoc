@@ -3,6 +3,18 @@
 
 == Changelog
 
+Version 2.4
+
+- Ajout fond 9 violâtre 
+- AJout fond 10 orangé
+- Fix bug numeros de fond
+- Ajout type 8 violâtre
+- Ajout type 9 orangée
+- Ajout digits 8 violâtres
+- Ajout digits 9 orangés
+- Ajout dots 8 violâtres
+- Ajout dots 9 orangés
+
 Version 2.3
 
 - Correction bug du resize
