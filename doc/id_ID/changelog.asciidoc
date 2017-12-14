@@ -3,6 +3,11 @@
 
 == Changelog
 
+Version 2.3
+
+- Correction bug du resize
+- Optimisation affiche liste des horloge (prise en compte option secondes)
+
 Version 2.2
 
 - Ajout choix d'options d'animation secondes (Sans, Flip, Clignotement dots)
