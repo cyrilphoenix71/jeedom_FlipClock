@@ -1,7 +1,7 @@
 :imagesdir: ../images
 :icons:
 
-== Configuration du plugin
+== Plugin Konfiguration
 
 Après avoir installé le plugin, il vous suffit de l'activer :
 
