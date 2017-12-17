@@ -36,7 +36,7 @@ Version 2.1
 
 - Ajout des fonds demi-hauteur (HTC Original, HTC Black, HTC White)
 - Correction image sans fond manquante
-- Ajout traduction page configuration
+- Übersetzung der Konfigurationsseite hinzugefügt
 - Ajout support affichage secondes
 - Ajout adaptation automatique largeur mini du widget
 - Ajout option desactivation animation des secondes

@@ -14,7 +14,7 @@ link:description.asciidoc[]
 link:installation.asciidoc[]
 
 '''
-=== Configuration
+=== Konfiguration
 link:configuration.asciidoc[]
 
 '''
