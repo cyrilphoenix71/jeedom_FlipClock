@@ -22,5 +22,5 @@ link:configuration.asciidoc[]
 link:faq.asciidoc[]
 
 '''
-=== Changelog
+=== Änderungsprotokoll
 link:changelog.asciidoc[]
