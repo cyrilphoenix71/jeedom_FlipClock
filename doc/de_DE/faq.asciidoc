@@ -11,5 +11,5 @@ Pourquoi en mode design le paramètre taille ne change rien ?
 
 - Via le parametrage de l'horloge vous pouvez changer sa taille, la methode utilisée (un scale) remplace le paramètre jeedom en question.
 
-=== Retour
+=== Zurück
 link:index.asciidoc[]

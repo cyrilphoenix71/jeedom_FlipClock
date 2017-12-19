@@ -7,5 +7,5 @@ L'installation se fait comme une installation classique de plugin, aucune dispos
 
 Pensez cependant à bien activer le plugin une fois l'installation terminée.
 
-=== Retour
+=== Zurück
 link:index.asciidoc[]

@@ -15,5 +15,5 @@ image:FlipClock_screenshot1.png[]
 
 image:FlipClock_screenshot2.png[]
 
-=== Retour
+=== Zurück
 link:index.asciidoc[]

@@ -6,7 +6,7 @@ image:FlipClock_icon.png[]
 
 {nbsp} +
 
-=== Description
+=== Beschreibung
 link:description.asciidoc[]
 
 '''
